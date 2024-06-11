@@ -1,3 +1,4 @@
+import { environment } from '../../../../../../../src/environments/environment';
 import { SaffronColumnType, SaffronTableColumn } from '../../../_23-saffron-table/saffron-table-public-api';
 import { DemoTableModel } from './demo-table-model';
 
@@ -16,7 +17,7 @@ export class DemoTableConfig {
       this.rows.push({
         position: x + 1,
         myCssIcon: 'mail',
-        myImageIcon: '/assets/icons/home.svg',
+        myImageIcon: environment.APP_BASE_HREF + 'assets/icons/home.svg',
         requestDate: new Date(),
         accountNumber: 90000 + x * 31 * 19 * 3,
         accountType: x % 2 === 0 ? 'حساب نوع یک' : 'حساب نوع دو',

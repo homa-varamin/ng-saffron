@@ -1,10 +1,9 @@
-import { environment } from '../../../../../../../src/environments/environment';
-import { SaffronColumnType } from '../../../_23-saffron-table/models/_04-saffron-column-type';
-import { SaffronTableColumn } from '../../../_23-saffron-table/models/_06-saffron-table-column';
-import { saffronUUID } from '../../../_27-saffron-utils/generators/saffron-uuid';
-import { TransferTemplate } from './transfer-template.model';
+import { TransferTemplate } from "../../../projects/ng-saffron/src/lib/_08-saffron-demo/demo-table/models/transfer-template.model";
+import { SaffronColumnType, SaffronTableColumn, saffronUUID } from "../../../projects/ng-saffron/src/saffron-public-api";
+import { environment } from "../../environments/environment";
 
-export class TransferTemplateTableConfig {
+
+export class TransferTemplateTableConfig2 {
   rows: TransferTemplate[] = [];
   columns: SaffronTableColumn[] = [];
 
