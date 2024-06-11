@@ -1,0 +1,18 @@
+<mat-card id="saffron-card-view-mat-card" style="display: flex;
+flex-direction: column;" [ngStyle]="{'background-color': cardColor ? cardColor : 'white'}">
+  <mat-card-content
+    [ngClass]="{'saffron-card-view-with-action': actionButtons.length > 0,'saffron-card-view-without-action': actionButtons.length === 0}"
+    class="saffron-card-view-with-action">
+    <ng-container *ngTemplateOutlet="cardTemplate">
+    </ng-container>
+  </mat-card-content>
+  <mat-card-actions *ngIf="actionButtons.length ?? 0 > 0" id="saffron-card-actions" align="end">
+    <button id="saffron-card-view-button" *ngFor="let button of actionButtons" mat-raised-button [ngClass]="{'is-disabled':button.disabled}"
+      [color]="button.color" (click)="onActionClicked(button);(button.action || emptyMethod)(button.id);">
+      <div class="icon-container">
+        <mat-icon *ngIf="button.icon" [innerText]="button.icon"></mat-icon>
+        <span class="button-title" style="margin-inline-start: 0.5rem" [innerText]="button.title"></span>
+      </div>
+    </button>
+  </mat-card-actions>
+</mat-card>

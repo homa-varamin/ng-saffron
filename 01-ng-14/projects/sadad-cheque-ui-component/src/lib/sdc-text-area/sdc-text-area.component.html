@@ -1,0 +1,11 @@
+<div direction="rtl" dir="rtl" [formGroup]="formGroup">
+  <mat-form-field appearance="outline" style="width: 100%" [hideRequiredMarker]="true">
+    <mat-label>
+      <input-label [control]="control" [placeholder]="placeholder"></input-label>
+    </mat-label>
+    <textarea matInput [rows]="rows" class="input-of-sdc" [formControlName]="controlName" autocomplete="off"></textarea>
+    <mat-error>
+      <input-error [errors]="control.errors"></input-error>
+    </mat-error>
+  </mat-form-field>
+</div>

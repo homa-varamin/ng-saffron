@@ -1,0 +1,18 @@
+<table mat-table [dataSource]="rows">
+  <ng-container *ngFor="let column of columns;let columnIndex = index;" [matColumnDef]="column.field">
+    <th mat-header-cell *matHeaderCellDef [ngStyle]="{'width': column.width ?? 'unset'}">
+      <saffron-table-head-cell [ngStyle]="{'width': column.width ?? 'unset','display':'block'}" [title]="column.title"
+        [sortable]="column.sortable" [sortState]="sortedColumns[columnIndex]" [filterable]="column.filterable"
+        [columnType]="column.columnType" (sortStateChange)="onSortStateChange(columnIndex,$event)">
+      </saffron-table-head-cell>
+    </th>
+    <td mat-cell *matCellDef="let element;let rowIndex = index;">
+      <saffron-table-data-cell [data]="element[column.field]" [columnType]="column.columnType" [actionColumnData]="column.actionColumnData"
+        [isDataClickable]="column.isDataClickable" (actionClicked)="onActionClicked($event, rowIndex ,rows[rowIndex])"
+        (dataClicked)="onDataClicked(column,rows[rowIndex],rowIndex)">
+      </saffron-table-data-cell>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="tableHeaders; sticky: stickyHeader"></tr>
+  <tr mat-row *matRowDef="let row; columns: tableHeaders;" class="data-row"></tr>
+</table>

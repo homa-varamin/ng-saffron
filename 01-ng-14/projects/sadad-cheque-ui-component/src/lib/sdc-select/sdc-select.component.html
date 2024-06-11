@@ -1,0 +1,32 @@
+<div direction="rtl" dir="rtl" [formGroup]="formGroup">
+  <mat-form-field appearance="outline" style="width: 100%" [hideRequiredMarker]="true">
+    <mat-label>
+      <input-label [control]="control" [placeholder]="placeholder"></input-label>
+    </mat-label>
+    <mat-select *ngIf="!isMultiple" [formControlName]="controlName" class="input-of-sdc"
+      (selectionChange)="OptionChanged($event)">
+      <mat-option class="default-text">{{defaultText}}</mat-option>
+      <mat-option *ngFor="let item of Items" [value]="getValue(item)">
+        <strong> {{getLabel(item)}}</strong>
+      </mat-option>
+    </mat-select>
+
+    <mat-select #select *ngIf="isMultiple" [formControlName]="controlName" class="input-of-sdc" multiple>
+      <mat-select-trigger *ngIf="allSelected">{{allTitles}}</mat-select-trigger>
+      <mat-option #selectAllOption [value]="SdcSelectAllValue" (click)="toggleAllSelection()">
+        {{selectAllText}}
+      </mat-option>
+      <mat-option (click)="itemSelect()" [class]="customOptionClass" *ngFor="let item of Items"
+        [value]="getValue(item)">
+        <strong> {{getLabel(item)}}</strong>
+      </mat-option>
+    </mat-select>
+    <a [tabIndex]="-1" *ngIf="tooltip" (click)="tooltipCtrl.show()" #tooltipCtrl="matTooltip" matSuffix mat-icon-button
+      [matTooltip]="tooltip" [matTooltipPosition]="position">
+      <mat-icon class="search-icon">info</mat-icon>
+    </a>
+    <mat-error>
+      <input-error [errors]="control.errors"></input-error>
+    </mat-error>
+  </mat-form-field>
+</div>

@@ -1,0 +1,21 @@
+{
+  "name": "sadad-cheque-ui-component",
+  "version": "0.0.1",
+  "dependencies": {
+    "@angular/common": "14.2.5",
+    "@angular/core": "14.2.5",
+    "@angular/forms": "14.2.5",
+    "@angular/material": "14.2.3",
+    "@angular/platform-browser": "14.2.5",
+    "jalali-moment": "3.3.11",
+    "rxjs": "7.5.0",
+    "uuid": "8.3.2",
+    "ang-jsoneditor": "1.10.5",
+    "jsoneditor": "9.9.0",
+    "@types/uuid": "8.3.3",
+    "ngx-currency": "2.5.3",
+    "primeicons": "6.0.1",
+    "primeng": "14.1.2",
+    "tslib": "2.3.0"
+  }
+}

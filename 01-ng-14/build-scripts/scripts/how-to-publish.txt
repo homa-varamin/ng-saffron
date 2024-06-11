@@ -1,0 +1,12 @@
+To publish your first package just:
+1. Login
+npm adduser --registry http://192.168.11.23
+
+2. Publish
+npm publish --registry http://192.168.11.23
+
+3. Refresh this page
+
+
+/*******
+yarn add --no-save sadad-cheque-ui-component@0.0.35

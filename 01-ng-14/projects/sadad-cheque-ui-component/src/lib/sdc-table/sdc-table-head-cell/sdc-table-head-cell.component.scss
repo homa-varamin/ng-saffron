@@ -1,0 +1,78 @@
+$activeIconColor: #1890ff;
+$activeIconBackground: #dbdbdb;
+
+.header-text {
+  text-align: start;
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-icon-contianer {
+  width: 4.5rem;
+  justify-content: end !important;
+}
+
+.sort-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  transition: background-color 0.2s;
+  &:hover {
+    cursor: pointer;
+    background-color: $activeIconBackground;
+  }
+}
+
+.icon-contianer {
+  display: flex;
+  flex-direction: column;
+}
+
+.active-header-icon {
+  transition: color 150ms;
+  color: $activeIconColor;
+}
+
+.sort-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.6rem;
+  height: 0.6rem;
+  transition: color 150ms;
+  transform: scale(1);
+}
+
+.filter-container {
+  transition: background-color 0.2s;
+  width: 2rem;
+  height: 2rem;
+}
+
+.filter-container:hover {
+  background-color: $activeIconBackground;
+  cursor: pointer;
+}
+
+.filter-icon {
+  height: 26px;
+  transform: scale(0.75);
+  transition: background-color 150ms;
+  background-color: unset !important;
+}
+
+.perfect-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-icon-container {
+  background-color: $activeIconBackground;
+}
+
+

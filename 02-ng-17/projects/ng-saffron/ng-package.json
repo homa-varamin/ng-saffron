@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ng-saffron",
+  "lib": {
+    "entryFile": "src/saffron-public-api.ts"
+  },
+  "assets": ["./theme/styles.scss"]
+}

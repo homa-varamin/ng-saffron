@@ -1,0 +1,19 @@
+.form-container-content {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 10px -1px rgb(0 0 0 / 0.1);
+  border-radius: 1rem;
+}
+
+.form-container-title {
+  font-family: "iransans" !important;
+  margin: 0px;
+}
+
+.form-container-expand-icon {
+  color: #b6b6b6;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.not-expanded {
+  transform: rotate(180deg);
+}

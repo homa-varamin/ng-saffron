@@ -1,0 +1,98 @@
+@import "./mat-icons.css";
+@import "./materialize.min.css";
+
+.perfect-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed-action-btn.spin-close .btn-small {
+  position: relative;
+}
+
+.fixed-action-btn.spin-close .btn-small i {
+  opacity: 1;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.fixed-action-btn.spin-close .btn-small:before {
+  transition: transform 0.3s, opacity 0.3s;
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.64rem;
+  height: 2px;
+  background: white;
+  margin-top: -1px;
+  margin-left: -0.82rem;
+  transform: rotate(0) scale(0.7);
+  opacity: 0;
+}
+
+.fixed-action-btn.spin-close .btn-small:after {
+  transition: transform 0.3s, opacity 0.3s;
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.64rem;
+  height: 2px;
+  background: white;
+  margin-top: -1px;
+  margin-left: -0.82rem;
+  transform: rotate(0) scale(0.7);
+  opacity: 0;
+}
+
+.fixed-action-btn.spin-close.active .btn-small i {
+  opacity: 0;
+}
+
+.fixed-action-btn.spin-close.active .btn-small:before {
+  opacity: 1;
+  transform: rotate(135deg) scale(0.7);
+}
+
+.fixed-action-btn.spin-close.active .btn-small:after {
+  opacity: 1;
+  transform: rotate(405deg) scale(0.7);
+}
+
+.btn-floating {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+@font-face {
+  font-family: "iransans";
+  src: url("./IRANSansWebFaNum-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.iransans {
+  font-family: "iransans";
+}
+
+.material-tooltip {
+  font-family: "iransans";
+  font-size: 10px;
+  width: 40px;
+  height: 10px !important;
+  max-height: 10px !important;
+  margin-top: 0px !important;
+  line-height: 20% !important;
+  min-height: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

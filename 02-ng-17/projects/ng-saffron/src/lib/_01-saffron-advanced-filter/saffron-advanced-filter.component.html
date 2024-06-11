@@ -1,0 +1,30 @@
+<div class="nep-search-panel">
+  <div class="nep-content-search">
+    <div class="nep-input-search">
+      <div *ngFor="let filter of primaryFilters.slice(0, maxPrimaryFilters);let index = index;">
+        <div [ngSwitch]="true">
+          <div *ngSwitchCase="inputTypes.includes(filter.dataType)">
+            <saffron-input [formGroup]="formGroup" [dataType]="filter.dataType" [placeholder]="filter.title"
+              [controlName]="filter.controlName">
+            </saffron-input>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nep-chips">
+      <saffron-chips [chipList]="chipList" (remove)="onChipRemove($event)"></saffron-chips>
+    </div>
+  </div>
+  <div class="nep-footer-search">
+    <div>
+      <saffron-button [title]="'جستجوی پیشرفته'" (click)="this.openModal = true" [matIcon]="'ads_click'"
+        [buttonType]="SaffronButtonTypes.Basic">
+      </saffron-button>
+      <saffron-button (click)="onSearch()" [title]="'اعمال جستجو'" [matIcon]="'manage_search'" [buttonType]="SaffronButtonTypes.Primary">
+      </saffron-button>
+    </div>
+  </div>
+</div>
+
+<saffron-advanced-filter-modal [(openModal)]="openModal" [formGroup]="formGroup" [secondryFilters]="secondryFilters">
+</saffron-advanced-filter-modal>

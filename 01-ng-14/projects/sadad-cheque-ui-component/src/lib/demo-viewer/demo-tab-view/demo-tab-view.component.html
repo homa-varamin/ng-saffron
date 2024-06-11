@@ -1,0 +1,56 @@
+<div style="display: flex; justify-content: center;flex-direction: column; width: 100%; margin-top: 2rem;">
+  <fieldset appFieldset>
+    <legend>sdc-tab-view</legend>
+    <div style="margin: 3rem 0rem;width: 100%;">
+      <sdc-tab-view [tabData]="tabData" (tabClicked)="tabClicked($event)"
+        [tabTemplates]="[tab1Template,tab2Template,tab3Template]">
+      </sdc-tab-view>
+      <div style="display: flex; justify-content: center; margin-top: 1rem;height: 1rem;">{{message}}</div>
+    </div>
+  </fieldset>
+  <div style="margin-top: 1rem !important">
+  </div>
+  <fieldset appFieldset style="background-color: white">
+    <legend>sdc-card-view</legend>
+    <div style="display: flex;flex-direction: column; width: 100%;align-items: center;">
+      <div style="display: flex;flex-direction: column; width: 10rem;align-items: center;">
+        <div style="display: flex;" direction="rtl" dir="rtl">
+          <div style="font-family: 'iransans' !important;">سایز کارت</div>
+          <div style="font-family: 'iransans' !important;">:</div>
+          <div style="font-family: 'iransans' !important;">{{cardTwoSizeRounded}}rem</div>
+        </div>
+        <mat-slider min="40" max="80" step="0.001"    (change)="sliderOneChange($event)" >
+          <input matSliderThumb name="cardTwoSizeRounded1"  [(ngModel)]="cardTwoSizeRounded" >
+        </mat-slider>
+      </div>
+      <div style="width: 100%;" [ngStyle]="{'height': cardTwoRemSize}">
+        <sdc-card-view [cardTemplate]="tableTabView" [actionButtons]="actionButtons" (actionClicked)="onActionClicked($event)">
+        </sdc-card-view>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+<ng-template #tab1Template>
+  <div>tab 1 template</div>
+</ng-template>
+
+<ng-template #tab2Template>
+  <div>tab 2 template</div>
+</ng-template>
+
+<ng-template #tab3Template>
+  <div>tab 3 template</div>
+</ng-template>
+
+
+<ng-template #tableTabView>
+  <sdc-tab-view [tabData]="[tabData[0]]" [tabTemplates]="[tableTabTemplate]">
+  </sdc-tab-view>
+</ng-template>
+
+<ng-template #tableTabTemplate>
+  <sdc-table [rows]="rows" [columns]="columns" (actionClicked)="onTableActionClicked($event)" (dataClicked)="dataClicked($event)"></sdc-table>
+</ng-template>
+

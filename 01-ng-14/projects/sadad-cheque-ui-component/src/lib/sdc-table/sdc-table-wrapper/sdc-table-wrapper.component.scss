@@ -1,0 +1,53 @@
+th,
+td {
+  text-align: center !important;
+  padding: 0px !important;
+  font-family: "iransans" !important;
+}
+
+tr {
+  transition: background 750ms;
+}
+
+tr.data-row:hover {
+  background: #fafafa;
+}
+
+th:not(:first-child)::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 1.6em;
+  background-color: #0000000f;
+  transform: translateY(-50%);
+  transition: background-color 0.3s;
+  content: "";
+}
+
+th {
+  font-size: 14px;
+  position: relative;
+}
+
+table {
+  width: 100%;
+}
+
+:host::ng-deep {
+  td.mat-cell,
+  th.mat-header-cell {
+    border-bottom-color: #f0f0f0 !important;
+  }
+
+  .mat-header-row {
+    background-color: #fafafa;
+    transition: background-color 0.8s;
+  }
+}
+
+.perfect-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

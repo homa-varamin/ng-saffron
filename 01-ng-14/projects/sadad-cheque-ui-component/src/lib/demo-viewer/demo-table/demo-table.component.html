@@ -1,0 +1,9 @@
+<div style="display: flex; justify-content: center; width: 100%;">
+  <fieldset appFieldset style="background-color: white">
+    <legend>sdc-table</legend>
+    <div style="margin: 3rem 0rem;width: 100%;height: 50rem;">
+      <sdc-table [rows]="rows" [columns]="columns" (actionClicked)="onActionClicked($event)" (dataClicked)="dataClicked($event)"
+        [totalCount]="totalCount" [pageSizeOptions]="pageSizeOptions"></sdc-table>
+    </div>
+  </fieldset>
+</div>

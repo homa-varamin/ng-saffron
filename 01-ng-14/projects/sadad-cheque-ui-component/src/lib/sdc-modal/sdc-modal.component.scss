@@ -1,0 +1,38 @@
+mat-form-field,
+mat-select,
+mat-error,
+mat-option,
+mat-label,
+button,
+input {
+  font-family: "iransans" !important;
+}
+
+button {
+  font-size: 14px !important;
+}
+
+.content-container {
+  direction: rtl !important;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-button,
+.button-title {
+  font-family: "iransans" !important;
+}
+
+#sdc-modal-component {
+  font-family: "iransans" !important;
+}
+
+.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed !important;
+}

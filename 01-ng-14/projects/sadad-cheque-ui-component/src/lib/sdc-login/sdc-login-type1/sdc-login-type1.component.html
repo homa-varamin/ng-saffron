@@ -1,0 +1,24 @@
+<form direction="rtl" dir="rtl" style="direction: rtl" (ngSubmit)="onSubmit()">
+  <sdc-input [formGroup]="formGroup" [placeholder]="usernameTitle" [controlName]="'username'">
+  </sdc-input>
+
+  <sdc-input [formGroup]="formGroup" [placeholder]="passwordTitle" [controlName]="'password'"
+    [dataType]="SdcDataType.Password">
+  </sdc-input>
+  <div [formGroup]="formGroup" class="checkbox-container" *ngIf="showKeepMe">
+    <mat-checkbox color="primary" [formControlName]="'keepLoggedIn'"><span
+        class="tw-font-iransans">{{keepMeTitle}}</span></mat-checkbox>
+  </div>
+
+  <div style="display: flex;margin-top: 1rem;">
+    <sdc-button class="login-enter-btn" [htmlButtonType]="'submit'" [title]="enterTitle" (click)="enterClicked()"
+      [matIcon]="'ads_click'" [buttonType]="SdcButtonTypes.Primary">
+    </sdc-button>
+    <sdc-button style="margin-inline-start: 1rem;" [title]="clearTitle" (click)="clearClicked()"
+      [buttonType]="SdcButtonTypes.Basic">
+    </sdc-button>
+  </div>
+  <div class="tw-mt-6" *ngIf="showError">
+    <sdc-login-error (hideClicked)="showError = false;"></sdc-login-error>
+  </div>
+</form>

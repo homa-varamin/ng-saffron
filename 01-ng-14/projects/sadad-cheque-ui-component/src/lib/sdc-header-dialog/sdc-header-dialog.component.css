@@ -1,0 +1,6 @@
+.btn_close {
+  cursor: pointer !important;
+  position: absolute !important;
+  top: 4px;
+  left: 5px
+}

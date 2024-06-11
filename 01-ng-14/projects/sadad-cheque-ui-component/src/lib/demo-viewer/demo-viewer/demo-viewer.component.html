@@ -1,0 +1,13 @@
+<div style="background-color: lightblue; width: 100%;height: 100%;direction: rtl" direction="rtl" dir="rtl">
+  <mat-sidenav-container style="width: 100%;height: 100%;">
+    <mat-sidenav #snav [mode]="'side'" fixedTopGap="56">
+      <mat-nav-list>
+        <a *ngFor="let item of menuItems" mat-list-item routerLink="." class="nav-list-link"
+          [ngClass]="{'active-menu': activeMenu === item.id}" (click)="menuClicked(item.id)">{{item.title}}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="padding: 1rem;box-sizing: border-box;">
+      <ng-template #viewContainerRef></ng-template>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

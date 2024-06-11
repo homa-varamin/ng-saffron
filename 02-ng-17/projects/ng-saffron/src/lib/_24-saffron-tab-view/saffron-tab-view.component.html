@@ -1,0 +1,18 @@
+<div class="saffron-card-view">
+  <mat-card-content>
+    <div class="header-container">
+      <mat-card-header style="z-index: inherit;" *ngFor="let data of tabData;let tabIndex = index;"
+        [ngClass]="{'active-header': tabIndex === activeTabIndex , 'inActive-header': tabIndex != activeTabIndex}">
+        <div style="display:flex;z-index: inherit;" class="title-container" (click)="onTabClick(data,tabIndex)">
+          <mat-icon style="color: #0c9ff7;margin-left: 10px;z-index: inherit;" [innerText]="data.materialIcon">
+          </mat-icon>
+          <h4>{{data.title}}</h4>
+        </div>
+      </mat-card-header>
+    </div>
+    <div class="row content-container">
+      <ng-container *ngTemplateOutlet="activeTabTemplate">
+      </ng-container>
+    </div>
+  </mat-card-content>
+</div>

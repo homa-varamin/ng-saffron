@@ -1,0 +1,25 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/sadad-cheque-ui-component",
+  "lib": {
+    "entryFile": "src/sdc-public-api.ts"
+  },
+  "assets": ["./src/lib/styles.scss"],
+  "allowedNonPeerDependencies": [
+    "@angular/common",
+    "@angular/core",
+    "@angular/forms",
+    "@angular/material",
+    "@angular/platform-browser",
+    "jalali-moment",
+    "rxjs",
+    "uuid",
+    "ang-jsoneditor",
+    "jsoneditor",
+    "@types/uuid",
+    "ngx-currency",
+    "primeicons",
+    "primeng",
+    "tslib"
+  ]
+}

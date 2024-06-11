@@ -1,0 +1,18 @@
+:root {
+  --saffron-text-color: #0009;
+
+  //// angular material overrides
+  --mdc-outlined-text-field-outline-color: #b6b6b6;
+  --mdc-outlined-text-field-outline-width:2px;
+
+  --mdc-outlined-text-field-hover-outline-color: #6299cf;
+  --mdc-outlined-text-field-hover-outline-width: 2px;
+
+  --mdc-outlined-text-field-focus-outline-color: #6299cf;
+  --mdc-outlined-text-field-focus-outline-width:2px;
+}
+
+//// angular material overrides
+mat-error:before {
+  content: none !important;
+}

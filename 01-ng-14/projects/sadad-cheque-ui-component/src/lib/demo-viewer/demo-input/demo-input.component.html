@@ -1,0 +1,93 @@
+<div style="display: flex; justify-content: center;align-items: center; width: 100%;flex-direction: column;">
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>sdc-input(number)</legend>
+    <div class="input-container">
+      <sdc-input [formGroup]="formGroup" [isButton]="true" (onClick)="onSearch()" [dataType]="SdcDataType.Number" [placeholder]="accountNumber"
+        [controlName]="'serialNumber'" (enterPressed)="enterPressed()">
+      </sdc-input>
+      <div>{{formGroup.controls['serialNumber'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>sdc-input(icon)</legend>
+    <div class="input-container">
+      <sdc-input [formGroup]="formGroup" [isButton]="true" (onClick)="onSearch()" [dataType]="SdcDataType.Number" [placeholder]="accountNumber" [icon]="'home'"
+        [controlName]="'amount'" (enterPressed)="enterPressed()">
+      </sdc-input>
+      <div>{{formGroup.controls['amount'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>sdc-input(readonly)</legend>
+    <div class="input-container">
+      <sdc-input [formGroup]="formGroup" [isButton]="true" (onClick)="onSearch()" [dataType]="SdcDataType.Number" [placeholder]="accountNumber" [isReadOnly]="true"
+        [controlName]="'amount'" (enterPressed)="enterPressed()">
+      </sdc-input>
+      <div>{{formGroup.controls['amount'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>sdc-input(tool-tip) amount</legend>
+    <div class="input-container">
+      <sdc-input [formGroup]="formGroup" [tooltip]="'مبلغ را وارد نمایید'" [controlName]="'amount'" [isButton]="true" (onClick)="onSearch()"
+        [dataType]="SdcDataType.Currency" [placeholder]="amountTitle" (enterPressed)="enterPressed()">
+      </sdc-input>
+      <div>{{formGroup.controls['amount'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>sdc-input(currency)</legend>
+    <div class="input-container">
+      <sdc-input [formGroup]="formGroup" [controlName]="'amount'" [isButton]="true" (onClick)="onSearch()" [dataType]="SdcDataType.Currency"
+        [placeholder]="amountTitle" (enterPressed)="enterPressed()">
+      </sdc-input>
+      <div>{{formGroup.controls['amount'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>sdc-input(text)</legend>
+    <div class="input-container">
+      <sdc-input [formGroup]="formGroup" [placeholder]="accountNumber" [controlName]="'branchName'" (enterPressed)="enterPressed()">
+      </sdc-input>
+      <div>{{formGroup.controls['branchName'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>sdc-input(Touched)</legend>
+    <div class="input-container">
+      <sdc-input [formGroup]="formGroup" [isButton]="true" (onClick)="onSearch()" [dataType]="SdcDataType.Number" [placeholder]="accountNumber"
+        [controlName]="'serialNumberDirty'" (enterPressed)="enterPressed()">
+      </sdc-input>
+      <div>{{formGroup.controls['serialNumberDirty'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend> tooltip </legend>
+    <div class="input-container">
+      'after', 'before', 'above', 'below', 'left', 'right'
+      <sdc-tooltip [tooltip]="'تست'" [position]="'after'"></sdc-tooltip>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'" style="height: max-content !important;">
+    <legend>sdc-input(FormArray Example)</legend>
+    <div style="display: flex;flex-direction:column;align-items: center;">
+      <sdc-button [title]="'Add FormArray'" (click)="addFormArray()" [matIcon]="'add_circle_outline'" [buttonType]="SdcButtonTypes.Basic"
+        [tooltip]="'this is tooltip'">
+      </sdc-button>
+      <div class="input-container" *ngFor="let nestedFormGroup of nestedFormControls; let i = index"
+        style="margin-top: 2rem;display: flex;width: 42rem;justify-content: space-between;">
+        <div style="width: 20rem;">
+          <sdc-input autocomplete="off" [formGroup]="nestedFormGroup" [placeholder]="nameTitle" [controlName]="'name'">
+          </sdc-input>
+          <div style="height: 1rem;">{{nestedFormGroup.controls['name'].value}}</div>
+        </div>
+        <div style="width: 20rem;">
+          <sdc-input autocomplete="off" [formGroup]="nestedFormGroup" [controlName]="'nationalCode'" [dataType]="SdcDataType.Number"
+            [placeholder]="nationalCodeTitle">
+          </sdc-input>
+          <div style="height: 1rem;">{{nestedFormGroup.controls['nationalCode'].value}}</div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

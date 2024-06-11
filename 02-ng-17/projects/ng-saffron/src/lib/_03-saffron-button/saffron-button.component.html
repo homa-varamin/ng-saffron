@@ -1,0 +1,6 @@
+<button mat-raised-button [type]="htmlButtonType" [color]="buttonType" [style]="buttonStyle" (click)="clicked();">
+  <div style="display: flex;gap: 0.5rem;justify-content: center;align-items: center;">
+    <mat-icon *ngIf="matIcon">{{matIcon}}</mat-icon>
+    <span class="title-container" *ngIf="title" [innerText]="title" style="overflow: hidden;"></span>
+  </div>
+</button>

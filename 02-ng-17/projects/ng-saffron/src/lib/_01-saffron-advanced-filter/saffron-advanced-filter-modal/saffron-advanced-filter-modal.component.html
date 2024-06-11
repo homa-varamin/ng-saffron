@@ -1,0 +1,23 @@
+<saffron-modal [config]="config" [modalTemplate]="modalTemplate" [open]="openModal" [customButtons]="customButtons">
+</saffron-modal>
+<ng-template #modalTemplate>
+  <div style="display: flex;flex-direction: column;direction: rtl !important;box-shadow: 0 0 5px #c1c5c9;margin: -24px;">
+
+
+    <div style="background-color: rgb(249 250 251);">
+      <h2 mat-dialog-title [innerText]="'جستجوی پیشرفته'" style="text-align: right;padding: 1rem 2rem;margin: 0rem;"></h2>
+    </div>
+    <div class="nep-item-panel">
+      <div *ngFor="let filter of secondryFilters" class="nep-item-search">
+        <div [ngSwitch]="true">
+          <div *ngSwitchCase="inputTypes.includes(filter.dataType)">
+            <saffron-input [formGroup]="formGroup" [dataType]="filter.dataType" [placeholder]="filter.title" [controlName]="filter.controlName">
+            </saffron-input>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</ng-template>

@@ -1,0 +1,26 @@
+::ng-deep .mat-tooltip {
+  font-family: "iransans" !important;
+}
+
+:host::ng-deep {
+  .mat-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.title-container {
+  font-family: "iransans" !important;
+  font-size: 14px;
+  margin-inline-end: 0.5rem;
+}
+
+button {
+  width: 100%;
+}
+
+:host {
+  width: 100%;
+}

@@ -1,0 +1,32 @@
+<div direction="rtl" dir="rtl">
+
+  <div class="header-dialog">
+    <h2 class="iransans" mat-dialog-title>{{data.title}}</h2>
+    <button mat-icon-button (click)="dialogRef.close(false);">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div mat-dialog-content>
+    <p class="iransans">{{data.message}}</p>
+  </div>
+
+  <div mat-dialog-actions [align]="'end'">
+    <button class="iransans" style="width: 8rem;" mat-raised-button (click)="dialogRef.close(false);">
+      <ng-container *ngIf="data.cancelCaption;else cancelCaption">
+        {{data.cancelCaption}}
+      </ng-container>
+      <ng-template #cancelCaption>انصراف</ng-template>
+    </button>
+
+    <button class="iransans" style="width: 8rem;" [ngStyle]="{'background-color':data.acceptButonColor ? data.acceptButonColor : ''}"
+      mat-raised-button color="primary" (click)="dialogRef.close(true);">
+
+      <ng-container *ngIf="data.confirmCaption;else confirmCaption">
+        {{data.confirmCaption}}
+      </ng-container>
+      <ng-template #confirmCaption>تایید</ng-template>
+    </button>
+
+  </div>
+</div>

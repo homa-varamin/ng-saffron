@@ -1,0 +1,18 @@
+@import "./tailwind-input-style.scss";
+@import "./assets/Fonts/inter-var/inter-var-font.scss";
+
+@import url(./fonts.scss);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+* {
+  font-size: 14px;
+}
+
+@import "~jsoneditor/dist/jsoneditor.min.css";

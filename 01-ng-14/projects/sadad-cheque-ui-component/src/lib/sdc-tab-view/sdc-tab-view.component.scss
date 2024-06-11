@@ -1,0 +1,110 @@
+$header-container-height: 2.7rem;
+
+* {
+  direction: rtl;
+}
+
+h4 {
+  margin: 0px;
+  font-family: "iransans" !important;
+}
+
+.active-header {
+  background-color: #ebf4fa;
+  box-shadow: 0px 0px 5px 0px rgb(11 101 135 / 35%);
+  transition: all 0.15s;
+}
+
+.inActive-header {
+  box-shadow: 0px 0px 5px 0px rgb(131 131 131 / 20%);
+  transition: all 0.15s;
+}
+
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+mat-card-content {
+  width: 100%;
+}
+
+mat-card-header {
+  float: right;
+}
+
+.sdc-card-view::ng-deep {
+  .mat-card-content {
+    margin: 0px !important;
+  }
+
+  .mat-card-header {
+    padding: 8px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    min-width: 15rem;
+    max-width: max-content;
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    z-index: 0;
+    position: relative;
+    padding: 0rem 0.5rem;
+    height: $header-container-height;
+  }
+
+  .mat-card {
+    margin-bottom: 10px;
+  }
+
+  .mat-card-header-text {
+    margin: 0 !important;
+  }
+
+  .mat-card {
+    box-shadow: none !important;
+  }
+
+  .mat-card-header-text {
+    margin: 0 !important;
+  }
+
+  .mat-card-content .row .value {
+    font-weight: 300;
+    font-size: 15px;
+    border-top: 1px solid #e4e4e4;
+  }
+
+  .mat-card-content .row {
+    padding: 16px;
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 15%),
+      0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 1px 0px 0px rgb(0 0 0 / 12%) !important;
+    background: #ffffff;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid rgba(216, 216, 216, 0.686);
+    font-size: 12px !important;
+    width: 100%;
+  }
+}
+
+.content-container {
+  position: relative;
+  height: calc(100% - $header-container-height) !important;
+  margin: 0px !important;
+}
+
+.title-container {
+  cursor: pointer;
+  width: 100%;
+}
+
+.sdc-card-view {
+  height: 100%;
+}
+
+mat-card-content {
+  height: 100%;
+}

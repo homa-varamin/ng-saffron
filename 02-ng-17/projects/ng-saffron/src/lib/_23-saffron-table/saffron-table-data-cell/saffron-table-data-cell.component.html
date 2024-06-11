@@ -1,0 +1,29 @@
+<ng-container [ngSwitch]="columnType">
+  <div class="cell-text" *ngSwitchCase="SaffronColumnType.date">{{data | dateToPersian}}</div>
+  <div class="cell-text" *ngSwitchCase="SaffronColumnType.jalaliMoment">{{data | jalaliToPersian}}</div>
+  <div class="cell-text" *ngSwitchCase="SaffronColumnType.ShamsiDateNumber">{{data | shamsiDate}}</div>
+  <div class="cell-text" *ngSwitchCase="SaffronColumnType.Currency">{{data | currencyFormat }}</div>
+  <div *ngSwitchCase="SaffronColumnType.actionColumn" class="action-column-container cell-text">
+    <ng-container *ngFor="let actionColumn of actionColumnData">
+      <mat-icon *ngIf="actionColumn.icon" [innerText]="actionColumn.icon" [matTooltip]="actionColumn.toolTip ?? ''"
+        [matTooltipPosition]="actionColumn?.toolTipPosition ?? 'after'" (click)="onActionClicked(actionColumn)"></mat-icon>
+      <div [matTooltip]="actionColumn.toolTip ?? ''" [matTooltipPosition]="actionColumn?.toolTipPosition ?? 'after'"
+        (click)="onActionClicked(actionColumn)">
+        <img *ngIf="actionColumn.imageUrl" [src]="actionColumn.imageUrl"
+          [ngStyle]="{'width': actionColumn.imageWidthPx ?? '2rem', 'height':actionColumn.imageHeightPx ?? '2rem'}"
+          style="cursor: pointer;" />
+      </div>
+
+    </ng-container>
+  </div>
+  <div (click)="onDataClick()" *ngSwitchCase="SaffronColumnType.cssIcon" class="perfect-center icon-container">
+    <mat-icon [innerText]="data"></mat-icon>
+  </div>
+  <div (click)="onDataClick()" *ngSwitchCase="SaffronColumnType.imageIcon" class="perfect-center icon-container">
+    <img style="width: 2rem;" [src]="data" alt="icon-column">
+  </div>
+  <div (click)="onDataClick()" style="direction: ltr;max-width: max-content;margin: 0rem 1rem;" class="cell-text"
+    *ngSwitchCase="SaffronColumnType.number">
+    {{data}}</div>
+  <div (click)="onDataClick()" class="cell-text" *ngSwitchDefault>{{data}}</div>
+</ng-container>

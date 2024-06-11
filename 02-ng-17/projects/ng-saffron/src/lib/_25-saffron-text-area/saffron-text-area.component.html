@@ -1,0 +1,11 @@
+<div direction="rtl" dir="rtl" [formGroup]="formGroup">
+  <mat-form-field appearance="outline" style="width: 100%" [hideRequiredMarker]="true">
+    <mat-label>
+      <saffron-input-label [control]="control" [placeholder]="placeholder"></saffron-input-label>
+    </mat-label>
+    <textarea matInput [rows]="rows" class="input-of-saffron" [formControlName]="controlName" autocomplete="off"></textarea>
+    <mat-error>
+      <saffron-input-error [errors]="control.errors"></saffron-input-error>
+    </mat-error>
+  </mat-form-field>
+</div>

@@ -1,0 +1,46 @@
+mat-form-field,
+mat-select,
+mat-error,
+mat-option,
+mat-label,
+input {
+  font-family: "iransans" !important;
+}
+
+.default-text {
+  color: rgb(94, 92, 92);
+}
+
+:host::ng-deep {
+  .mat-mdc-form-field-outline,
+  .mat-mdc-form-field-outline:hover,
+  saffron-number-input:hover,
+  mat-form-field-infix:hover {
+    outline: #6299cf !important;
+  }
+
+  .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline-thick {
+    color: #6299cf !important;
+  }
+}
+
+:host {
+  width: 100%;
+}
+
+a {
+  color: blue;
+}
+
+#saffron-auto-complete-component::ng-deep {
+  mat-form-field {
+    .mat-mdc-form-field-wrapper {
+      padding-bottom: 0px !important;
+    }
+  }
+}
+.saffron-mat-error-container {
+  display: flex;
+  padding: 0px 1rem;
+  color: #f44336;
+}

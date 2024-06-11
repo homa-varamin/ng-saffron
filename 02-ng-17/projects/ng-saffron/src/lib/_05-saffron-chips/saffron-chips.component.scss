@@ -1,0 +1,55 @@
+:host {
+  display: block;
+}
+
+#saffron-chips::ng-deep {
+  mat-chip,
+  .mat-mdc-chip-action-label,
+  h2 {
+    font-family: "iransans" !important;
+    cursor: pointer !important;
+  }
+
+  mat-chip-option {
+    display: flex;
+  }
+
+  mat-icon {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5fa8ff;
+    cursor: pointer !important;
+  }
+
+  .nep-chips {
+    display: flex;
+    margin-bottom: 1.5rem;
+    margin-top: 0.8rem;
+    cursor: pointer !important;
+
+    .mat-mdc-chip.mat-mdc-standard-chip {
+      border: 1px solid #b8d5f1;
+      background-color: #e8f1fb;
+      min-height: 26px;
+      height: 26px;
+      font-size: 12px;
+      color: #333333;
+
+      .mat-mdc-chip-remove {
+        color: #4791db;
+        opacity: none;
+      }
+      .mat-mdc-chip-remove,
+      .mat-mdc-chip-trailing-icon {
+        width: 16px;
+        height: 16px;
+      }
+      &:hover {
+        background-color: #b9d6ff !important;
+        border-color: #bedcf9;
+      }
+    }
+  }
+}

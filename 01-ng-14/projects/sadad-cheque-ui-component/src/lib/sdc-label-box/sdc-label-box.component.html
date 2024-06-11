@@ -1,0 +1,15 @@
+<div class="input-read" direction="rtl" dir="rtl" style="direction: rtl">
+  <div class="label">
+    <mat-label>{{placeholder}}</mat-label>
+  </div>
+  <div class="value">
+    <div *ngIf="!template" style="padding: 0px !important;">
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="template" style="padding: 0px !important;">
+      <ng-container *ngTemplateOutlet="template">
+      </ng-container>
+    </div>
+  </div>
+
+</div>

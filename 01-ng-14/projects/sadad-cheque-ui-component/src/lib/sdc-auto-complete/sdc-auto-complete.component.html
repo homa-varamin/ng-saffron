@@ -1,0 +1,19 @@
+<div id="sdc-auto-complete-component" direction="rtl" dir="rtl" style="direction: rtl" [formGroup]="formGroup">
+  <mat-form-field appearance="outline" [hideRequiredMarker]="true" style="width: 100%;">
+    <mat-label>
+      <input-label [control]="control" [placeholder]="placeHolder"></input-label>
+    </mat-label>
+    <div [formGroup]="internalFormGroup">
+      <input type="text" [formControlName]="'searchInput'" [placeholder]="defaultText" matInput [matAutocomplete]="auto">
+    </div>
+    <mat-autocomplete (optionSelected)="optionSelected($event.option)" autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.title" [id]="option.value">
+        {{option.title}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <div *ngIf="control.errors && control.touched" class="sdc-mat-error-container">
+    <input-error [errors]="control.errors"></input-error>
+  </div>
+</div>

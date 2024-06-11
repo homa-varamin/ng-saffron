@@ -1,0 +1,80 @@
+$matCardPadding: 1.5rem;
+$cardActionsHeight: 2.7rem;
+$cardActionsTopMargin: 1rem;
+$cardContentHeightOffset: calc($cardActionsHeight + $cardActionsTopMargin);
+
+* {
+  direction: rtl;
+}
+
+:host {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.mat-button,
+.button-title {
+  font-family: "iransans" !important;
+  font-size: 14px;
+  margin-inline-end: 0.5rem;
+  white-space: nowrap;
+}
+
+#saffron-card-view-mat-card {
+  height: 100% !important;
+}
+
+.saffron-card-view-with-action {
+  height: calc(100% - $cardContentHeightOffset) !important;
+}
+
+.saffron-card-view-without-action {
+  height: 100% !important;
+}
+
+mat-card-actions {
+  height: $cardActionsHeight !important;
+  padding: 0px !important;
+  margin: $cardActionsTopMargin 0px 0px 0px;
+}
+
+mat-card-content {
+  margin: 0px !important;
+}
+
+mat-card {
+  box-shadow: none !important;
+  padding: $matCardPadding !important;
+  display: block;
+}
+
+mat-icon {
+  font-size: x-large !important;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+#saffron-card-view-button {
+  min-width: 10rem !important;
+  margin: 0px !important;
+}
+
+#saffron-card-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  /* width: 100%; */
+  letter-spacing: unset !important;
+}

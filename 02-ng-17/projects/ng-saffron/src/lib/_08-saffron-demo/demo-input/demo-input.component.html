@@ -1,0 +1,93 @@
+<div style="display: flex; justify-content: center;align-items: center; width: 100%;flex-direction: column;">
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>saffron-input(number)</legend>
+    <div class="input-container">
+      <saffron-input [formGroup]="formGroup" [isButton]="true" (onClick)="onSearch()" [dataType]="SaffronDataType.Number" [placeholder]="accountNumber"
+        [controlName]="'serialNumber'" (enterPressed)="enterPressed()">
+      </saffron-input>
+      <div>{{formGroup.controls['serialNumber'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>saffron-input(icon)</legend>
+    <div class="input-container">
+      <saffron-input [formGroup]="formGroup" [isButton]="true" (onClick)="onSearch()" [dataType]="SaffronDataType.Number" [placeholder]="accountNumber" [icon]="'home'"
+        [controlName]="'amount'" (enterPressed)="enterPressed()">
+      </saffron-input>
+      <div>{{formGroup.controls['amount'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>saffron-input(readonly)</legend>
+    <div class="input-container">
+      <saffron-input [formGroup]="formGroup" [isButton]="true" (onClick)="onSearch()" [dataType]="SaffronDataType.Number" [placeholder]="accountNumber" [isReadOnly]="true"
+        [controlName]="'amount'" (enterPressed)="enterPressed()">
+      </saffron-input>
+      <div>{{formGroup.controls['amount'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>saffron-input(tool-tip) amount</legend>
+    <div class="input-container">
+      <saffron-input [formGroup]="formGroup" [tooltip]="'مبلغ را وارد نمایید'" [controlName]="'amount'" [isButton]="true" (onClick)="onSearch()"
+        [dataType]="SaffronDataType.Currency" [placeholder]="amountTitle" (enterPressed)="enterPressed()">
+      </saffron-input>
+      <div>{{formGroup.controls['amount'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>saffron-input(currency)</legend>
+    <div class="input-container">
+      <saffron-input [formGroup]="formGroup" [controlName]="'amount'" [isButton]="true" (onClick)="onSearch()" [dataType]="SaffronDataType.Currency"
+        [placeholder]="amountTitle" (enterPressed)="enterPressed()">
+      </saffron-input>
+      <div>{{formGroup.controls['amount'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>saffron-input(text)</legend>
+    <div class="input-container">
+      <saffron-input [formGroup]="formGroup" [placeholder]="accountNumber" [controlName]="'branchName'" (enterPressed)="enterPressed()">
+      </saffron-input>
+      <div>{{formGroup.controls['branchName'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend>saffron-input(Touched)</legend>
+    <div class="input-container">
+      <saffron-input [formGroup]="formGroup" [isButton]="true" (onClick)="onSearch()" [dataType]="SaffronDataType.Number" [placeholder]="accountNumber"
+        [controlName]="'serialNumberDirty'" (enterPressed)="enterPressed()">
+      </saffron-input>
+      <div>{{formGroup.controls['serialNumberDirty'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend> tooltip </legend>
+    <div class="input-container">
+      'after', 'before', 'above', 'below', 'left', 'right'
+      <saffron-tooltip [tooltip]="'تست'" [position]="'after'"></saffron-tooltip>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'" style="height: max-content !important;">
+    <legend>saffron-input(FormArray Example)</legend>
+    <div style="display: flex;flex-direction:column;align-items: center;">
+      <saffron-button [title]="'Add FormArray'" (click)="addFormArray()" [matIcon]="'add_circle_outline'" [buttonType]="SaffronButtonTypes.Basic"
+        [tooltip]="'this is tooltip'">
+      </saffron-button>
+      <div class="input-container" *ngFor="let nestedFormGroup of nestedFormControls; let i = index"
+        style="margin-top: 2rem;display: flex;width: 42rem;justify-content: space-between;">
+        <div style="width: 20rem;">
+          <saffron-input autocomplete="off" [formGroup]="nestedFormGroup" [placeholder]="nameTitle" [controlName]="'name'">
+          </saffron-input>
+          <div style="height: 1rem;">{{nestedFormGroup.controls['name'].value}}</div>
+        </div>
+        <div style="width: 20rem;">
+          <saffron-input autocomplete="off" [formGroup]="nestedFormGroup" [controlName]="'nationalCode'" [dataType]="SaffronDataType.Number"
+            [placeholder]="nationalCodeTitle">
+          </saffron-input>
+          <div style="height: 1rem;">{{nestedFormGroup.controls['nationalCode'].value}}</div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>

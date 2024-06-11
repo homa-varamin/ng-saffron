@@ -1,0 +1,14 @@
+<div direction="rtl" dir="rtl" [formGroup]="formGroup" id="saffron-date-picker-container">
+  <mat-form-field appearance="outline" (click)="picker.open()" style="width: 100%" [hideRequiredMarker]="true">
+    <mat-label>
+      <saffron-input-label [control]="control" [placeholder]="placeholder"></saffron-input-label>
+    </mat-label>
+    <input matInput (focus)="picker.open()" class="input-of-saffron" [formControlName]="controlName" [matDatepicker]="picker"
+      autocomplete="off" (keyup)="onKey($event)" (blur)="blurred()" [max]="max" [min]="min">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error>
+      <saffron-input-error [errors]="control.errors"></saffron-input-error>
+    </mat-error>
+  </mat-form-field>
+</div>

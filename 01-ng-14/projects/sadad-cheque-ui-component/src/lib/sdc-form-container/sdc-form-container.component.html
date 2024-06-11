@@ -1,0 +1,23 @@
+<sdc-card-view *ngIf="template" [cardTemplate]="myTemplate" [actionButtons]="actionButtons" [cardColor]="backgroundColor">
+</sdc-card-view>
+
+<h2 *ngIf="!template">
+  No_Template_Is_Defined
+</h2>
+
+<ng-template #myTemplate>
+  <mat-card-content class="form-container-content" [ngStyle]="{'background-color': foregroundColor,'height': '100%','padding': '1.5rem'}">
+    <div style="display: flex;flex-direction: row;align-items: center;gap:1rem">
+      <div
+        style="display: flex ; justify-content: center;align-items: center;background-color: #0c9ff7;border-radius: 2rem;padding: 0.4rem;">
+        <mat-icon style="color:white ;" [innerText]="'manage_search'">
+        </mat-icon>
+      </div>
+      <h3 class="form-container-title" [innerText]="'جستجو'"></h3>
+      <div style="flex: 1;height: 2px;background-color: #eeeeee;">
+      </div>
+      <mat-icon (click)="isExpanded = !isExpanded" [ngClass]="{'not-expanded': !isExpanded}" class="form-container-expand-icon"
+        [innerText]="'expand_more'"></mat-icon>
+    </div>
+  </mat-card-content>
+</ng-template>

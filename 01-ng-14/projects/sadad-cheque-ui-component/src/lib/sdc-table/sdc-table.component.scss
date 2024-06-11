@@ -1,0 +1,88 @@
+h2 {
+  font-family: "iransans" !important;
+  margin: 0px !important;
+}
+
+mat-paginator {
+  height: 5rem !important;
+}
+
+.host-container {
+  height: 100%;
+  width: 100%;
+}
+
+.table-container {
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+:host {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+:host::ng-deep {
+  .mat-paginator-container {
+    justify-content: center !important;
+    font-family: "iransans" !important;
+  }
+
+  .mat-select-value-text {
+    font-family: "iransans" !important;
+  }
+}
+
+::ng-deep {
+  mat-option {
+    font-family: "iransans" !important;
+  }
+}
+
+* {
+  direction: rtl;
+}
+
+#sdc-table::ng-deep {
+  th:not(:first-child)::before {
+    // this is column cell seperator
+    background-color: rgba(0, 0, 0, 0.14) !important;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fbfbfb;
+  }
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 0.1), 0 1px 10px -1px rgb(0 0 0 / 0.1);
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  //border: 2px solid transparent;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 20px rgba(0, 0, 0, 0.24);
+}
+
+*::-webkit-scrollbar:hover {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.host-container {
+  height: 100% !important;
+
+  sdc-table-wrapper {
+    max-height: 40rem;
+  }
+}

@@ -1,0 +1,18 @@
+<div id="saffron-table" direction="rtl" dir="rtl" class="host-container" style="display: flex;flex-direction: column;">
+  <mat-paginator *ngIf="!hideTopPaginator" [length]="totalCount" [pageIndex]="pageNumber - 1 " [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions" aria-label="Select page" (page)="onPageChange($event)">
+  </mat-paginator>
+  <div class="table-container">
+    <saffron-table-wrapper style="height: max-content" [stickyHeader]="stickyHeader" [rows]="rows" [columns]="columns"
+      (dataClicked)="onDataClicked($event)" (actionClicked)="onActionClicked($event)" (sortStateChanged)="onSortStateChange($event)">
+    </saffron-table-wrapper>
+    <div *ngIf="!rows || rows.length === 0" style="flex: 1;margin: 0 auto;width: max-content;display: flex;align-items: center;">
+      <div style="background: #fafafa;padding: 1rem 5rem;border-radius: 7px;opacity: 0.5;">
+        <h2>اطلاعاتی برای نمایش موجود نیست.</h2>
+      </div>
+    </div>
+  </div>
+  <mat-paginator *ngIf="!hideBottomPaginator" [length]="totalCount" [pageIndex]="pageNumber - 1 " [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions" aria-label="Select page" (page)="onPageChange($event)">
+  </mat-paginator>
+</div>

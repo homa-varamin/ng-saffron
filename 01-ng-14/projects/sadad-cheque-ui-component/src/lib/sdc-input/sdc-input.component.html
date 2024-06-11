@@ -1,0 +1,39 @@
+<div class="sdc-input" direction="rtl" dir="rtl" [formGroup]="formGroup" [ngStyle]="{'cursor': isReadOnly ? 'not-allowed' : 'unset'}">
+  <mat-form-field appearance="outline" style="width: 100%" [hideRequiredMarker]="true" [ngClass]="{'is-read-only': isReadOnly}">
+    <mat-label>
+      <input-label [control]="control" [placeholder]="placeholder"></input-label>
+    </mat-label>
+    <div [ngSwitch]="dataType">
+      <div *ngSwitchCase="SdcDataType.Text">
+        <input class="input-of-sdc" [formControlName]="controlName" matInput [maxLength]="maxlength" autocomplete="off"
+          (keyup.enter)="onEnterPressed()">
+      </div>
+      <div *ngSwitchCase="SdcDataType.Password">
+        <input class="input-of-sdc" [formControlName]="controlName" matInput [type]="true ? 'password' : 'text'" [maxLength]="maxlength"
+          autocomplete="off" (keyup.enter)="onEnterPressed()">
+      </div>
+      <div *ngSwitchCase="SdcDataType.Number">
+        <input class="input-of-sdc" direction="ltr" dir="ltr" style="direction: ltr;" [formControlName]="controlName" matInput [min]="min"
+          [max]="max" [maxLength]="maxlength" autocomplete="off" (keyup.enter)="onEnterPressed()">
+      </div>
+      <div *ngSwitchCase="SdcDataType.Currency">
+        <input class="input-of-sdc" [formControlName]="controlName" matInput currencyMask [min]="min" [max]="max" [maxLength]="maxlength"
+          autocomplete="off" (keyup.enter)="onEnterPressed()">
+      </div>
+    </div>
+    <button *ngIf="isButton" matSuffix mat-icon-button aria-label="جستجو" (click)="onButtonClicked()">
+      <mat-icon class="search-icon">{{icon}}</mat-icon>
+    </button>
+    <a [tabIndex]="-1" *ngIf="tooltip" (click)="tooltipCtrl.show()" #tooltipCtrl="matTooltip" matSuffix mat-icon-button
+      [matTooltip]="tooltip" [matTooltipPosition]="position">
+      <mat-icon class="search-icon">info</mat-icon>
+    </a>
+    <mat-error>
+      <input-error [errors]="control?.errors"></input-error>
+    </mat-error>
+    <mat-hint *ngIf="showLength && dataType === SdcDataType.Number" align="end">{{((control?.value ?? '') + '').length}} /
+      {{maxlength}}</mat-hint>
+    <mat-hint *ngIf="showToPersian && dataType === SdcDataType.Currency" class="number-persian"> {{ control?.value |
+      numberToPersian}}</mat-hint>
+  </mat-form-field>
+</div>

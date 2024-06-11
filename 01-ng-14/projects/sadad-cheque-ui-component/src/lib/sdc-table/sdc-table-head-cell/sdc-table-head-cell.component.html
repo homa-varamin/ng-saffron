@@ -1,0 +1,18 @@
+<div class="header-text" >
+  <div>{{title}}</div>
+  <div class="perfect-center header-icon-contianer" *ngIf="sortable || filterable">
+    <div class="sort-container" [ngClass]="{'active-icon-container': sortState.asc || sortState.desc}" *ngIf="sortable"
+      (click)="onSortClick()">
+      <div class="icon-contianer">
+        <mat-icon class="sort-icon" [ngClass]="{'active-header-icon': sortState.asc}" [innerText]="'arrow_drop_up'">
+        </mat-icon>
+        <mat-icon class="sort-icon" [ngClass]="{'active-header-icon': sortState.desc}" [innerText]="'arrow_drop_down'">
+        </mat-icon>
+      </div>
+    </div>
+    <div *ngIf="filterable" class="perfect-center filter-container"
+      [ngClass]="{'active-header-icon': filter.hasFilter ,'active-icon-container': filter.hasFilter}" (click)="onFilterClick()">
+      <mat-icon class="filter-icon" [innerText]="'filter_alt'"></mat-icon>
+    </div>
+  </div>
+</div>

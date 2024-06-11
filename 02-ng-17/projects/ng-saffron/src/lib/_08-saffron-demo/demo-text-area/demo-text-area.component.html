@@ -1,0 +1,24 @@
+<div style="display: flex;align-items: center; flex-direction: column; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset appFieldset style="background-color: white">
+    <legend>saffron-text-area</legend>
+    <div class="d-flex flex-column" style="width: 100%">
+      <div style="margin: 3rem 0rem;width: 100%;">
+        <div>
+          <saffron-text-area [formGroup]="formGroup" [placeholder]="'شرح'" [controlName]="'desc'"></saffron-text-area>
+        </div>
+      </div>
+      <div>{{formGroup.controls['desc'].value}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset style="background-color: white">
+    <legend>saffron-text-area(Touched)</legend>
+    <div class="d-flex flex-column" style="width: 100%">
+      <div style="margin: 3rem 0rem;width: 100%;">
+        <div>
+          <saffron-text-area [formGroup]="formGroup" [placeholder]="'شرح'" [controlName]="'descTouched'"></saffron-text-area>
+        </div>
+      </div>
+      <div>{{formGroup.controls['descTouched'].value}}</div>
+    </div>
+  </fieldset>
+</div>

@@ -1,0 +1,69 @@
+.mat-button,
+.mat-calendar-body,
+.mat-calendar-body-cell,
+#mat-calendar-button-1,
+#mat-calendar-button-0,
+.mat-button .mat-button-wrapper,
+.mat-calendar-table-header {
+  font-family: "iransans" !important;
+}
+
+mat-calendar-body,
+mat-calendar-body-cell,
+#mat-calendar-button-1,
+#mat-calendar-button-0,
+mat-button mat-button-wrapper,
+mat-calendar-table-header {
+  font-family: "iransans" !important;
+}
+
+.mat-form-field-outline,
+.mat-form-field-outline:hover,
+sdc-number-input:hover,
+mat-form-field-infix:hover {
+  outline: #6299cf !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #6299cf !important;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+  .mat-form-field-outline-thick {
+  color: red !important;
+}
+
+.mat-calendar-content {
+  font-family: "iransans" !important;
+}
+
+.mat-calendar {
+  font-family: "iransans" !important;
+}
+
+.mat-calendar-table {
+  font-family: "iransans" !important;
+}
+
+mat-form-field,
+mat-select,
+mat-option {
+  font-family: "iransans" !important;
+}
+
+sdc-date-picker,
+.mat-focus-indicator,
+.mat-calendar-body-cell,
+.mat-calendar {
+  font-family: "iransans" !important;
+}
+
+sdc-date-picker {
+  width: 100%;
+}
+
+#sdc-date-picker-container {
+  .mat-datepicker-input {
+    font-family: "iransans" !important;
+  }
+}

@@ -1,0 +1,86 @@
+mat-chip,
+h2 {
+  font-family: "iransans" !important;
+}
+
+/****************** Designer Styles *******************/
+.nep-search-panel {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 0.1), 0 1px 10px -1px rgb(0 0 0 / 0.1);
+
+  .nep-content-search {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 0 2rem;
+  }
+}
+.nep-input-search {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+
+  div {
+    flex-grow: 1;
+  }
+}
+
+.nep-chips {
+  display: flex;
+  margin-bottom: 1.5rem;
+  margin-top: 0.8rem;
+
+  .mat-chip.mat-standard-chip {
+    border: 1px solid #b8d5f1;
+    background-color: #e8f1fb;
+    min-height: 26px;
+    height: 26px;
+    font-size: 12px;
+    color: #333333;
+
+    .mat-chip-remove {
+      color: #4791db;
+      opacity: none;
+    }
+    .mat-chip-remove,
+    .mat-chip-trailing-icon {
+      width: 16px;
+      height: 16px;
+    }
+    &:hover {
+      background-color: transparent !important;
+      border-color: #bedcf9;
+    }
+  }
+}
+
+.nep-footer-search {
+  background-color: #f1f1f1;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: row-reverse;
+
+  div {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+/****** Responsive ******/
+@media screen and (min-width: 992px) and (max-width: 1240px) {
+  .nep-input-search {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (min-width: 1240px) and (max-width: 1440px) {
+  .nep-input-search {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .nep-input-search {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

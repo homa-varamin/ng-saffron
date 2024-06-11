@@ -1,0 +1,51 @@
+<div id="demo-card-view-component" style="display: flex;flex-direction: column; justify-content: center; width: calc(100% - 3rem); margin-top: 2rem;">
+  <fieldset appFieldset>
+    <legend>sdc-card-view</legend>
+    <div style="padding: 3rem 0rem;width: 100%;height: 20rem;">
+      <sdc-card-view [cardTemplate]="tabView" [actionButtons]="actionButtons" (actionClicked)="onActionClicked($event)">
+      </sdc-card-view>
+    </div>
+  </fieldset>
+  <div style="margin-top: 1rem !important">
+  </div>
+  <fieldset appFieldset style="background-color: white">
+    <legend>sdc-card-view</legend>
+    <div style="display: flex;flex-direction: column; width: 100%;align-items: center;">
+      <div style="display: flex;flex-direction: column; width: 10rem;align-items: center;">
+        <div style="display: flex;" direction="rtl" dir="rtl">
+          <div style="font-family: 'iransans' !important;">سایز کارت</div>
+          <div style="font-family: 'iransans' !important;">:</div>
+          <div style="font-family: 'iransans' !important;">{{cardTwoSizeRounded}}rem</div>
+        </div>
+        <mat-slider min="40" max="80" step="0.001"  (change)="sliderOneChange($event)" >
+          <input matSliderThumb  name="cardTwoSizeRounded" [(ngModel)]="cardTwoSizeRounded">
+        </mat-slider>
+      </div>
+      <div style="width: 100%;" [ngStyle]="{'height': cardTwoRemSize}">
+        <sdc-card-view [cardTemplate]="tableCardView" [actionButtons]="actionButtons" (actionClicked)="onActionClicked($event)">
+        </sdc-card-view>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<ng-template #tabView>
+  <sdc-tab-view [tabData]="tabData" [tabTemplates]="[tab1Template]">
+  </sdc-tab-view>
+</ng-template>
+
+<ng-template #tab1Template>
+  <div>tab 1 template</div>
+</ng-template>
+
+<ng-template #tab2Template>
+  <div>tab 2 template</div>
+</ng-template>
+
+<ng-template #tab3Template>
+  <div>tab 3 template</div>
+</ng-template>
+
+<ng-template #tableCardView>
+  <sdc-table [rows]="rows" [columns]="columns" (actionClicked)="onTableActionClicked($event)" (dataClicked)="dataClicked($event)"></sdc-table>
+</ng-template>

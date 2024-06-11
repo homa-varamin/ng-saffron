@@ -1,0 +1,55 @@
+<div style="display: flex;flex-direction: column; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset appFieldset style="background-color: white">
+    <legend>saffron-label-box</legend>
+    <div style="display: flex; justify-content: center;margin: 3rem 0rem;width: 100%;">
+      <div class="lable-box-container">
+        <saffron-label-box [placeholder]="'سری و سریال چک'">
+          1234567894545
+        </saffron-label-box>
+      </div>
+      <div class="lable-box-container">
+        <saffron-label-box [placeholder]="'شماره حساب'">
+          1234567894545
+        </saffron-label-box>
+      </div>
+      <div class="lable-box-container">
+        <saffron-label-box [placeholder]="'نام صاحب  حساب'">
+          سبحان میرزایی
+        </saffron-label-box>
+      </div>
+      <div class="lable-box-container">
+        <saffron-label-box [placeholder]="'شناسه صیاد'">
+          6347000064636532
+        </saffron-label-box>
+      </div>
+    </div>
+  </fieldset>
+  <br>
+  <fieldset appFieldset style="background-color: white">
+    <legend>saffron-label-box (width template)</legend>
+    <div style="display: flex; justify-content: center;margin: 3rem 0rem;width: 100%;">
+      <div class="lable-box-container">
+        <saffron-label-box [placeholder]="'سری و سریال چک'" [template]="template">
+        </saffron-label-box>
+      </div>
+      <div class="lable-box-container">
+        <saffron-label-box [placeholder]="'سری و سریال چک'" [template]="template">
+        </saffron-label-box>
+      </div>
+      <div class="lable-box-container">
+        <saffron-label-box [placeholder]="'سری و سریال چک'" [template]="template">
+        </saffron-label-box>
+      </div>
+      <div class="lable-box-container">
+        <saffron-label-box [placeholder]="'سری و سریال چک'" [template]="template">
+        </saffron-label-box>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<ng-template #template>
+  <div>test</div>
+  <div>test</div>
+  <div>test</div>
+</ng-template>

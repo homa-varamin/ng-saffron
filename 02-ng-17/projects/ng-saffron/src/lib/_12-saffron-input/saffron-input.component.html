@@ -1,0 +1,43 @@
+<div class="saffron-input" dir="rtl" [formGroup]="formGroup" [ngStyle]="{'cursor': isReadOnly ? 'not-allowed' : 'unset'}">
+  <mat-form-field appearance="outline" style="width: 100%" [hideRequiredMarker]="true" [ngClass]="{'is-read-only': isReadOnly}">
+    <mat-label>
+      <saffron-input-label [control]="control" [placeholder]="placeholder"></saffron-input-label>
+    </mat-label>
+    <div style="display: flex;">
+      <div [ngSwitch]="dataType" style="display: flex;">
+        <div *ngSwitchCase="SaffronDataType.Text">
+          <input class="input-of-saffron" [formControlName]="controlName" matInput [maxLength]="maxlength" autocomplete="off"
+            (keyup.enter)="onEnterPressed()">
+        </div>
+        <div *ngSwitchCase="SaffronDataType.Password">
+          <input class="input-of-saffron" [formControlName]="controlName" matInput [type]="true ? 'password' : 'text'"
+            [maxLength]="maxlength" autocomplete="off" (keyup.enter)="onEnterPressed()">
+        </div>
+        <div *ngSwitchCase="SaffronDataType.Number">
+          <input class="input-of-saffron" [formControlName]="controlName" matInput [min]="min" [max]="max" [maxLength]="maxlength"
+            autocomplete="off" (keyup.enter)="onEnterPressed()">
+        </div>
+        <div *ngSwitchCase="SaffronDataType.Currency">
+          <input class="input-of-saffron" [formControlName]="controlName" matInput currencyMask [min]="min" [max]="max"
+            [maxLength]="maxlength" autocomplete="off" (keyup.enter)="onEnterPressed()">
+        </div>
+      </div>
+      <div style="display: flex;">
+        <button *ngIf="isButton" matSuffix mat-icon-button aria-label="جستجو" (click)="onButtonClicked()">
+          <mat-icon class="search-icon">{{icon}}</mat-icon>
+        </button>
+        <a [tabIndex]="-1" *ngIf="tooltip" (click)="tooltipCtrl.show()" #tooltipCtrl="matTooltip" matSuffix mat-icon-button
+          [matTooltip]="tooltip" [matTooltipPosition]="position">
+          <mat-icon class="search-icon">info</mat-icon>
+        </a>
+      </div>
+    </div>
+    <mat-error>
+      <saffron-input-error [errors]="control?.errors"></saffron-input-error>
+    </mat-error>
+    <mat-hint *ngIf="showLength && dataType === SaffronDataType.Number" align="end">{{((control?.value ?? '') + '').length}} /
+      {{maxlength}}</mat-hint>
+    <mat-hint *ngIf="showToPersian && dataType === SaffronDataType.Currency" class="number-persian"> {{ control?.value |
+      numberToPersian}}</mat-hint>
+  </mat-form-field>
+</div>

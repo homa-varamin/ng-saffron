@@ -1,0 +1,14 @@
+button {
+  margin-right: 0.5rem;
+}
+:host ::ng-deep .p-tree {
+  a {
+    color: #2196f3;
+  }
+}
+
+:host {
+  sdc-prime-tree-view {
+    width: 100%;
+  }
+}

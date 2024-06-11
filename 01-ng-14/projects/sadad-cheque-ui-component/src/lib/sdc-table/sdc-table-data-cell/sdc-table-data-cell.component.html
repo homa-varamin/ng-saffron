@@ -1,0 +1,19 @@
+<ng-container [ngSwitch]="columnType">
+  <div class="cell-text" *ngSwitchCase="SdcColumnType.date">{{data | dateToPersian}}</div>
+  <div class="cell-text" *ngSwitchCase="SdcColumnType.jalaliMoment">{{data | jalaliToPersian}}</div>
+  <div class="cell-text" *ngSwitchCase="SdcColumnType.ShamsiDateNumber">{{data | shamsiDate}}</div>
+  <div class="cell-text" *ngSwitchCase="SdcColumnType.Currency">{{data | currencyFormat }}</div>
+  <div *ngSwitchCase="SdcColumnType.actionColumn" class="action-column-container cell-text">
+    <mat-icon *ngFor="let actionColumn of actionColumnData" [innerText]="actionColumn.icon" [matTooltip]="actionColumn.toolTip ?? ''"
+      [matTooltipPosition]="actionColumn?.toolTipPosition ?? 'after'" (click)="onActionClicked(actionColumn)"></mat-icon>
+  </div>
+  <div (click)="onDataClick()" *ngSwitchCase="SdcColumnType.cssIcon" class="perfect-center icon-container">
+    <mat-icon [innerText]="data"></mat-icon>
+  </div>
+  <div (click)="onDataClick()" *ngSwitchCase="SdcColumnType.imageIcon" class="perfect-center icon-container">
+    <img style="width: 2rem;" [src]="data" alt="icon-column">
+  </div>
+  <div (click)="onDataClick()" style="direction: ltr;max-width: max-content;margin: 0rem 1rem;" class="cell-text" *ngSwitchCase="SdcColumnType.number">
+    {{data}}</div>
+  <div (click)="onDataClick()" class="cell-text" *ngSwitchDefault>{{data}}</div>
+</ng-container>

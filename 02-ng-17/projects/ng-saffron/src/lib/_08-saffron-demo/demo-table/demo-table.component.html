@@ -1,0 +1,16 @@
+<div style="display: flex; justify-content: center; width: 100%;flex-direction: column;gap: 2rem;">
+  <fieldset appFieldset style="background-color: white">
+    <legend>simple-table</legend>
+    <div style="margin: 3rem 0rem;width: 100%;height: max-content">
+      <saffron-table [rows]="transferRows" [columns]="transferColumns" [hideTopPaginator]="true"
+        [hideBottomPaginator]="true"></saffron-table>
+    </div>
+  </fieldset>
+  <fieldset appFieldset style="background-color: white">
+    <legend>saffron-table</legend>
+    <div style="margin: 3rem 0rem;width: 100%;height: 50rem;">
+      <saffron-table [rows]="rows" [columns]="columns" (actionClicked)="onActionClicked($event)" (dataClicked)="dataClicked($event)"
+        [totalCount]="totalCount" [pageSizeOptions]="pageSizeOptions"></saffron-table>
+    </div>
+  </fieldset>
+</div>

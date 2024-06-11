@@ -1,0 +1,12 @@
+<div id="saffron-chips">
+    <div class="nep-chips">
+        <mat-chip-listbox>
+            <mat-chip-option *ngFor="let chip of chipList" (click)="remove.emit(chip)">
+                <div style="display: flex;align-items: center;gap: 3px;">
+                    <span>{{chip.title}}</span>
+                    <mat-icon>cancel</mat-icon>
+                </div>
+            </mat-chip-option>
+        </mat-chip-listbox>
+    </div>
+</div>

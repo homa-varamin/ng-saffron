@@ -1,0 +1,37 @@
+<div [formGroup]="formGroup"
+  style="display: flex;align-items: center; flex-direction: column; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend class="tw-font-inter tw-text-base">sdc-date-picker</legend>
+    <div class="date-container">
+      <sdc-date-picker [formGroup]="formGroup" [placeholder]="placeHolder" [controlName]="'myDate'">
+      </sdc-date-picker>
+      <div *ngIf="selectedDate" class="tw-font-iransans" style="display:flex;justify-content: center;">{{selectedDate}}
+      </div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'">
+    <legend class="tw-font-inter tw-text-base">sdc-date-picker(Touched)</legend>
+    <div class="date-container">
+      <sdc-date-picker [formGroup]="formGroup" [placeholder]="placeHolder" [controlName]="'myDateRequired'">
+      </sdc-date-picker>
+      <div *ngIf="selectedDate2" class="tw-font-iransans" style="display:flex;justify-content: center;">
+        {{selectedDate2}}</div>
+    </div>
+  </fieldset>
+  <fieldset appFieldset [fieldsetHeight]="'10rem'" style="height: max-content;">
+    <legend class="tw-font-inter tw-text-base">sdc-range-picker</legend>
+    <div class="date-container">
+      <sdc-range-picker [formGroup]="formGroup" [placeholder]="placeHolderRange" [startControlName]="'startRange'"
+        [endControlName]="'endRange'">
+      </sdc-range-picker>
+      <div style="display: flex;">
+        <sdc-label-box [placeholder]="'بازه پایان'">
+          {{endDateString}}
+        </sdc-label-box>
+        <sdc-label-box [placeholder]="'بازه شروع'">
+          {{startDateString}}
+        </sdc-label-box>
+      </div>
+    </div>
+  </fieldset>
+</div>

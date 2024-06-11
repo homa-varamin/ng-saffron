@@ -1,0 +1,57 @@
+<div [formGroup]="formGroup" style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset style="height: 10rem;">
+    <legend>sdc-auto-complete</legend>
+    <div style="display: flex; flex-direction: column;align-items: center;">
+      <div class="select-continer">
+        <sdc-auto-complete [options]="autoCompleteOptions" [placeHolder]="'کد شعبه'" [formGroup]="formGroup"
+          [controlName]="'autoComplete'"></sdc-auto-complete>
+      </div>
+      <div style="max-width: max-content;">{{autoCompleteSelectedItem}}</div>
+    </div>
+  </fieldset>
+</div>
+
+<div [formGroup]="formGroup" style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset style="height: 10rem;">
+    <legend>sdc-select</legend>
+    <div class="select-continer">
+      <sdc-select [formGroup]="formGroup" [controlName]="'degree'" [placeholder]="selectPlaceHolder" [valueField]="'value'"
+        [labelField]="'viewValue'" [Items]="degree">
+      </sdc-select>
+    </div>
+  </fieldset>
+</div>
+
+<div [formGroup]="formGroup" style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset style="height: 10rem;">
+    <legend>sdc-select</legend>
+    <div class="select-continer">
+      <sdc-select [formGroup]="formGroup" [controlName]="'paperCount'" [tooltip]="'تست '" [placeholder]="paperCountPlaceHolder"
+        [valueField]="'value'" [labelField]="'title'" [Items]="paperCountItems">
+      </sdc-select>
+    </div>
+  </fieldset>
+</div>
+
+<div [formGroup]="formGroup" style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset style="height: 10rem;">
+    <legend>sdc-select Multi select</legend>
+    <div class="select-continer">
+      <sdc-select [formGroup]="formGroup" [controlName]="'multiSheetNo'" [isMultiple]="true" [tooltip]="'تست '"
+        [placeholder]="paperCountPlaceHolder" [valueField]="'value'" [labelField]="'title'" [Items]="paperCountItems">
+      </sdc-select>
+    </div>
+  </fieldset>
+</div>
+
+
+<div [formGroup]="formGroup" style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset style="height: 10rem;">
+    <legend>sdc-select(Touched)</legend>
+    <div class="select-continer">
+      <sdc-select [formGroup]="formGroup" [controlName]="'requiredDegree'" [placeholder]="selectPlaceHolder" [valueField]="'value'"
+        [labelField]="'viewValue'" [Items]="degree">
+      </sdc-select>
+    </div>
+  </fieldset>
+</div>

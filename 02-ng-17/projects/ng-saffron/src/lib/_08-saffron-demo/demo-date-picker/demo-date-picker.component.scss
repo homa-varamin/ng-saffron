@@ -1,0 +1,16 @@
+fieldset {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-color: #ebebeb;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0px 1rem;
+}
+
+saffron-number-input,
+saffron-select,
+.date-container {
+  width: 20rem;
+}

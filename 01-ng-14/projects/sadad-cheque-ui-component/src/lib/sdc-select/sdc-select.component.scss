@@ -1,0 +1,37 @@
+mat-form-field,
+mat-select,
+mat-error,
+mat-option,
+mat-label,
+input {
+  font-family: "iransans" !important;
+}
+
+.default-text {
+  color: rgb(94, 92, 92);
+}
+
+:host::ng-deep {
+  .mat-form-field-outline,
+  .mat-form-field-outline:hover,
+  sdc-number-input:hover,
+  mat-form-field-infix:hover {
+    outline: #6299cf !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #6299cf !important;
+  }
+}
+
+:host {
+  width: 100%;
+}
+
+a {
+  color: blue;
+}
+
+.select-all {
+  margin: 5px 17px;
+}

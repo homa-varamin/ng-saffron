@@ -1,0 +1,40 @@
+<div direction="rtl" dir="rtl" style="direction: rtl;background-color: aquamarine;" id="saffron-modal-component">
+  <ng-template #templateref>
+    <ng-container *ngTemplateOutlet="modalTemplate">
+    </ng-container>
+    <ng-container *ngIf="customButtons.length > 0 ;then customBtns else defaultButtons">
+    </ng-container>
+  </ng-template>
+</div>
+
+<ng-template #defaultButtons>
+  <mat-dialog-actions id="saffron-modal-actions" align="end"
+    style="direction: rtl;display: flex;flex-direction: row-reverse;justify-content: end;gap:0.5rem" *ngIf="hasCancel || hasAccept">
+    <button [ngClass]="{'is-disabled': disableAccept}" id="saffron-modal-accept-button" *ngIf="hasAccept" (click)="acceptClicked.emit()"
+      cdkFocusInitial mat-raised-button [color]="'primary'" style="width: 9rem;">
+      <div class="icon-container">
+        <span class="button-title" style="margin-inline-start: 0.5rem" [innerText]="acceptTitle"></span>
+      </div>
+    </button>
+
+    <button [ngClass]="{'is-disabled': disableCancel}" id="saffron-modal-cancel-button" *ngIf="hasCancel" (click)="cancelClicked.emit()"
+      mat-raised-button [color]="'basic'" style="width: 9rem;">
+      <div class="icon-container">
+        <span class="button-title" [innerText]="cancelTitle"></span>
+      </div>
+    </button>
+  </mat-dialog-actions>
+</ng-template>
+
+<ng-template #customBtns>
+  <mat-dialog-actions id="saffron-modal-actions" align="end"
+    style="position: relative;background-color: #f3f4f5;display: flex;flex-direction: row-reverse;gap:1rem;padding: 5px 20px;margin: -24px;box-shadow: 0 0 5px #c1c5c9;">
+    <button *ngFor="let button of customButtons" [ngClass]="{'is-disabled': button.disabled}" [id]="button.htmlId"
+      (click)="customButtonClick(button)" mat-raised-button [color]="button.buttonType">
+      <div class="icon-container">
+        <span class="button-title" [innerText]="button.title"></span>
+        <!-- <mat-icon role="img" class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color ng-star-inserted" aria-hidden="true" data-mat-icon-type="font">manage_search</mat-icon> -->
+      </div>
+    </button>
+  </mat-dialog-actions>
+</ng-template>

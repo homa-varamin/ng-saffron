@@ -1,0 +1,16 @@
+<div direction="rtl" dir="rtl" [formGroup]="formGroup">
+  <mat-form-field appearance="outline" (click)="picker.open()" style="width: 100%" [hideRequiredMarker]="true">
+    <mat-label>
+      <saffron-input-label [control]="control" [placeholder]="placeholder"></saffron-input-label>
+    </mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate [placeholder]="startTitle" [formControlName]="startControlName" (blur)="blurred()">
+      <input matEndDate [placeholder]="endTitle" [formControlName]="endControlName" (blur)="blurred()">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+    <mat-error>
+      <saffron-input-error [errors]="control.errors"></saffron-input-error>
+    </mat-error>
+  </mat-form-field>
+</div>

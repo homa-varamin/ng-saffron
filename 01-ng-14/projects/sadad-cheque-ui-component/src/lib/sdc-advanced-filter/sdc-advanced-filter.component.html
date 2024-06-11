@@ -1,0 +1,37 @@
+<div class="nep-search-panel">
+  <div class="nep-content-search">
+    <div class="nep-input-search">
+      <div *ngFor="let filter of primaryFilters.slice(0, maxPrimaryFilters);let index = index;">
+        <div [ngSwitch]="true">
+          <div *ngSwitchCase="inputTypes.includes(filter.dataType)">
+            <sdc-input [formGroup]="formGroup" [dataType]="filter.dataType"
+              [placeholder]="filter.title" [controlName]="filter.controlName">
+            </sdc-input>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nep-chips">
+      <mat-chip-list>
+        <mat-chip *ngFor="let chip of chipList">
+          {{chip.title}}
+          <mat-icon matChipRemove (click)="onChipRemove(chip)">cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+  <div class="nep-footer-search">
+    <div>
+      <sdc-button [title]="'جستجوی پیشرفته'" (click)="this.openModal = true"
+        [matIcon]="'filter_alt_outline'" [buttonType]="SdcButtonTypes.Basic">
+      </sdc-button>
+      <sdc-button (click)="onSearch()" [title]="'اعمال جستجو'" [matIcon]="'manage_search'"
+        [buttonType]="SdcButtonTypes.Primary">
+      </sdc-button>
+    </div>
+  </div>
+</div>
+
+<sdc-advanced-filter-modal [(openModal)]="openModal" [formGroup]="formGroup"
+  [secondryFilters]="secondryFilters">
+</sdc-advanced-filter-modal>
