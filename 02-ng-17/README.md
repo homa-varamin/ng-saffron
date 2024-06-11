@@ -9,4 +9,4 @@
 ## Links
 
 - **Demo**: [https://homa-varamin.ir/ng-saffron](https://homa-varamin.ir/ng-saffron)
-- **Npm Page**: [https://www.npmjs.com/package/ng-saffron](https://www.npmjs.com/package/ng-saffron)
+- **Github Page**: [https://github.com/homa-varamin/ng-saffron](https://github.com/homa-varamin/ng-saffron)
