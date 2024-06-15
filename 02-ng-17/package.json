@@ -3,14 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 5200 --hmr --host 0.0.0.0",
+    "start": "ng serve --port 4800 --hmr --host 0.0.0.0",
     "start2": "ng serve --port 4800 --hmr --open",
-    "build": "ng build ng-saffron --configuration=production",
-    "build-test": "ng build --base-href /ng-saffron/ --configuration=production",
+    "build": "ng build --named-chunks --verbose --build-optimizer=false --source-map=true",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "clear-cache": "npm cache clean --force",
-    "build-lib": "ng build ng-saffron"
+    "build-lib": "ng build ng-saffron --configuration production"
   },
   "private": true,
   "dependencies": {
