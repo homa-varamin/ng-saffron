@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "clear-cache": "npm cache clean --force",
-    "build-lib": "ng build ng-saffron --configuration production"
+    "build-lib": "ng build ng-saffron --configuration production",
+    "build-test": "ng build --base-href /ng-saffron/ --configuration=production"
   },
   "private": true,
   "dependencies": {
