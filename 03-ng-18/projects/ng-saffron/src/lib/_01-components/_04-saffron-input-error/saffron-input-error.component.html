@@ -1,0 +1,11 @@
+<div class="d-flex" style="margin-top: 5px;">
+  <div *ngIf="errors?.['required']" style="text-align: right;" [innerText]="requiredMessage">
+  </div>
+  <div *ngIf="errors?.['minlength']" style="text-align: right;" [innerText]="minlengthMessage">
+  </div>
+  <div *ngIf="errors?.['maxlength']" style="text-align: right;" [innerText]="maxlengthMessage">
+  </div>
+  <div *ngIf="errors?.['nationalCodeValid']" style="text-align: right;" [innerText]="nationalCodeMessage">
+  </div>
+</div>
+

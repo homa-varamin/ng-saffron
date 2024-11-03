@@ -1,0 +1,58 @@
+mat-form-field,
+mat-select,
+mat-option {
+  font-family: "iransans" !important;
+}
+
+.saffron-input::ng-deep {
+  .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline-thick {
+    color: #6299cf !important;
+  }
+
+  .mat-mdc-form-field-appearance-outline.mat-mdc-form-field-invalid.mat-mdc-form-field-invalid
+    .mat-mdc-form-field-outline-thick {
+    color: red !important;
+  }
+}
+
+:host {
+  width: 100%;
+}
+
+.number-persian {
+  font-size: 10px;
+}
+
+.tooltip-icon {
+  background-color: #009ef7;
+  border-radius: 100%;
+}
+
+a {
+  color: #009ef7 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.is-read-only {
+  pointer-events: none;
+  cursor: not-allowed !important;
+}
+
+input {
+  direction: rtl;
+}
+
+::ng-deep {
+  mat-hint {
+    font-family: "iransans";
+  }
+}

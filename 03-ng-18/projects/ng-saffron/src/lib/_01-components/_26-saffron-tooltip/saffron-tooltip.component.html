@@ -1,0 +1,4 @@
+<a *ngIf="tooltipText" (click)="tooltip.show()" #tooltip="matTooltip" matSuffix mat-icon-button
+  [matTooltip]="tooltipText" [matTooltipPosition]="position">
+  <mat-icon class="search-icon">info</mat-icon>
+</a>

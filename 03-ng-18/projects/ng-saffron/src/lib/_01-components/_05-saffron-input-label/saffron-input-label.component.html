@@ -1,0 +1,5 @@
+<span style="margin-inline-end: 0.5rem;">
+  <span style="margin-inline-start: 0.5rem;" [ngClass]="{'input-has-error': control?.errors}">{{placeholder}}</span>
+  <span style="margin-inline-start: 0.2rem;" [ngClass]="{'input-has-error': control?.errors}"
+    *ngIf="control?.hasValidator(Validators.required)">*</span>
+</span>
