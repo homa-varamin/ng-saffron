@@ -2,7 +2,7 @@
   font-family: "iransans" !important;
 }
 
-.content {
+.app-content {
   display: flex;
   margin: 60px auto 32px;
   height: 100%;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.toolbar {
+.app-toolbar {
   position: absolute;
   top: 0;
   left: 0;
@@ -23,6 +23,6 @@
   font-weight: 600;
 }
 
-.toolbar img {
+.app-toolbar img {
   margin: 0 16px;
 }

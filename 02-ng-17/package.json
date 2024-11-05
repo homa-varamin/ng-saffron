@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4800 --hmr --host 0.0.0.0",
+    "start": "ng serve --port 4300 --hmr --host 0.0.0.0",
     "start2": "ng serve --port 4800 --hmr --open",
     "build": "ng build --named-chunks --verbose --build-optimizer=false --source-map=true",
     "watch": "ng build --watch --configuration development",
