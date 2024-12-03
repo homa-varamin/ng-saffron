@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
-import { LegacyAutoCompeleteModel } from './models/legacy-auto-compelete.model';
 import { map, Observable, of, startWith, tap } from 'rxjs';
 import { MatOption } from '@angular/material/core';
+import { SdcAutoCompleteModel } from '../sdc-auto-complete/models/sdc-auto-complete.model';
 
 @Component({
   selector: 'legacy-auto-complete',
@@ -17,13 +17,13 @@ export class LegacyAutoCompleteComponent implements OnChanges {
   controlName = '';
 
   @Input()
-  options: LegacyAutoCompeleteModel[] = [];
+  options: SdcAutoCompleteModel[] = [];
 
   @Input()
   placeHolder!: string;
 
   internalFormGroup!: FormGroup;
-  filteredOptions!: Observable<LegacyAutoCompeleteModel[]>;
+  filteredOptions!: Observable<SdcAutoCompleteModel[]>;
   control!: AbstractControl;
 
   constructor(private fb: FormBuilder) {
@@ -58,12 +58,12 @@ export class LegacyAutoCompleteComponent implements OnChanges {
   async setDefault() {
     const id = `${this.formGroup.value[this.controlName]}`;
     const option = this.options.find(
-      (x) => x.id === id
-    ) as LegacyAutoCompeleteModel;
+      (x) => x.value === id
+    ) as SdcAutoCompleteModel;
 
     if (option) {
       this.internalFormGroup.get('searchInput')?.setValue(option.title);
-      this.formGroup.get(this.controlName)?.setValue(option.id);
+      this.formGroup.get(this.controlName)?.setValue(option.value);
     }
   }
 
@@ -71,7 +71,7 @@ export class LegacyAutoCompleteComponent implements OnChanges {
     this.formGroup.get(this.controlName)?.setValue(matOption.id);
   }
 
-  private _filter(filterValue: string): LegacyAutoCompeleteModel[] {
+  private _filter(filterValue: string): SdcAutoCompleteModel[] {
     filterValue = filterValue.toLowerCase();
 
     return this.options.filter((option) =>
