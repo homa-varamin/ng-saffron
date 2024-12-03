@@ -1,0 +1,9 @@
+<mat-form-field style="width: 100%;" [formGroup]="internalFormGroup">
+  <mat-label style="font-family: 'iransans';">{{placeHolder}}</mat-label>
+  <input style="font-family: 'iransans';" type="text" matInput [formControlName]="'searchInput'" [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event.option)">
+    <mat-option style="font-family: 'iransans';" *ngFor="let option of filteredOptions | async" [value]="option.title" [id]="option.id + ''">
+      {{option.title}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

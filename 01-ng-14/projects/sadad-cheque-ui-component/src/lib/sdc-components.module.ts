@@ -53,6 +53,7 @@ import { SdcAdvancedFilterComponent } from './sdc-advanced-filter/sdc-advanced-f
 import { SdcAdvancedFilterModalComponent } from './sdc-advanced-filter/sdc-advanced-filter-modal/sdc-advanced-filter-modal.component';
 import { SdcFormContainerComponent } from './sdc-form-container/sdc-form-container.component';
 import { SdcChipsModule } from './sdc-chips/sdc-chips.module';
+import { LegacyAutoCompleteComponent } from './sdc-legacy-auto-complete/legacy-auto-complete.component';
 
 // import { Miladi2persianWithTimePipe, MiladiToPersianPipe } from '../sdc-public-api';
 
@@ -92,6 +93,7 @@ export const customCurrencyMaskConfig = {
     SdcLoginErrorComponent,
     SdcRangePickerComponent,
     SdcAutoCompleteComponent,
+    LegacyAutoCompleteComponent,
 
     //--------------------Directive----------------------
     DigitOnlyDirective,
@@ -146,6 +148,7 @@ export const customCurrencyMaskConfig = {
     SdcAutoCompleteComponent,
     SdcAdvancedFilterComponent,
     SdcFormContainerComponent,
+    LegacyAutoCompleteComponent,
 
     //--------------------Directive----------------------
     DigitOnlyDirective,

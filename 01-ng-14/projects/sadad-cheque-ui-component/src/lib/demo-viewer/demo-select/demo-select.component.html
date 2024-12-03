@@ -13,6 +13,19 @@
 
 <div [formGroup]="formGroup" style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
   <fieldset style="height: 10rem;">
+    <legend>legacy-auto-complete</legend>
+    <div style="display: flex; flex-direction: column;align-items: center;">
+      <div class="select-continer">
+        <legacy-auto-complete [options]="autoCompleteOptions" [placeHolder]="'کد شعبه'" [formGroup]="formGroup"
+          [controlName]="'autoComplete'"></legacy-auto-complete>
+      </div>
+      <div style="max-width: max-content;">{{autoCompleteSelectedItem}}</div>
+    </div>
+  </fieldset>
+</div>
+
+<div [formGroup]="formGroup" style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
+  <fieldset style="height: 10rem;">
     <legend>sdc-select</legend>
     <div class="select-continer">
       <sdc-select [formGroup]="formGroup" [controlName]="'degree'" [placeholder]="selectPlaceHolder" [valueField]="'value'"
@@ -49,8 +62,8 @@
   <fieldset style="height: 10rem;">
     <legend>sdc-select(Touched)</legend>
     <div class="select-continer">
-      <sdc-select [formGroup]="formGroup" [controlName]="'requiredDegree'" [placeholder]="selectPlaceHolder" [valueField]="'value'"
-        [labelField]="'viewValue'" [Items]="degree">
+      <sdc-select [formGroup]="formGroup" [controlName]="'requiredDegree'" [placeholder]="selectPlaceHolder"
+        [valueField]="'value'" [labelField]="'viewValue'" [Items]="degree">
       </sdc-select>
     </div>
   </fieldset>
