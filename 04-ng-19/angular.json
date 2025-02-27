@@ -97,6 +97,39 @@
           }
         }
       }
+    },
+    "ng-saffron": {
+      "projectType": "library",
+      "root": "projects/ng-saffron",
+      "sourceRoot": "projects/ng-saffron/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ng-saffron/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-saffron/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng-saffron/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ng-saffron/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }
